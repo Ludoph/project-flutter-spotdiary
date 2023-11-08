@@ -1,0 +1,19 @@
+FROM maven:3-openjdk-17 as build
+
+ENV MAVEN_HOME=/usr/local/maven
+ENV PATH $PATH:/usr/local/maven/bin
+
+WORKDIR /app/spotdiary-back/
+
+COPY ./spotdiary-back/pom.xml /app/spotdiary-back/pom.xml
+COPY ./spotdiary-back /app/spotdiary-back/
+
+RUN mvn clean install 
+
+FROM openjdk:17
+
+COPY --from=build /app/spotdiary-back/target/spotdiary-0.0.1-SNAPSHOT.jar /app/spotdiary-back/target/
+
+EXPOSE 8080
+
+CMD ["java", "-jar", "/app/spotdiary-back/target/spotdiary-0.0.1-SNAPSHOT.jar"]

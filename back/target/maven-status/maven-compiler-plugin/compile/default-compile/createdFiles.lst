@@ -1,0 +1,5 @@
+com/ludoph/spotdiary/controller/MessageController.class
+com/ludoph/spotdiary/service/MessageService.class
+com/ludoph/spotdiary/repository/MessageRepository.class
+com/ludoph/spotdiary/SpotdiaryApplication.class
+com/ludoph/spotdiary/model/Message.class
