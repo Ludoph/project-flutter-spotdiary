@@ -33,15 +33,17 @@ class MessageService {
     }
   }
 
-Future<void> deleteMessage(int id) async {
-  final response = await http.delete(Uri.parse(baseUrl + '/$id'));
-  if (response.statusCode == 200 || response.statusCode == 204 || response.statusCode == 202) {
-    // Suppression réussie (200, 204 ou 202 indiquent la suppression réussie)
-  } else {
-    throw Exception('Erreur lors de la suppression du message: ${response.statusCode}');
+  Future<void> deleteMessage(int id) async {
+    final response = await http.delete(Uri.parse(baseUrl + '/$id'));
+    if (response.statusCode == 200 ||
+        response.statusCode == 204 ||
+        response.statusCode == 202) {
+      // Suppression réussie (200, 204 ou 202 indiquent la suppression réussie)
+    } else {
+      throw Exception(
+          'Erreur lors de la suppression du message: ${response.statusCode}');
+    }
   }
-}
-
 
   Future<Message> getMessageById(int id) async {
     final response = await http.get(Uri.parse(baseUrl + '/$id'));

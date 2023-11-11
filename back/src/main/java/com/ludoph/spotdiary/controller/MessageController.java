@@ -14,7 +14,7 @@ import com.ludoph.spotdiary.model.Message;
 import com.ludoph.spotdiary.service.MessageService;
 
 @RestController
-@CrossOrigin(origins = { "http://localhost:65000", "http://localhost:8080" })
+@CrossOrigin(origins = "http://localhost:65000")
 public class MessageController {
     @Autowired
     private MessageService messageService;
