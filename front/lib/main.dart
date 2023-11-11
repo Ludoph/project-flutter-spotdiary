@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 // import 'package:spotidary/controller/MessageController.dart';
 import 'package:spotidary/view/welcome_page.dart';
-import 'widget/delayed_animation.dart';
 
 void main() {
   runApp(MyApp());
